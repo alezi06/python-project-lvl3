@@ -1,5 +1,10 @@
+from page_loader.cli import parse_args
+from page_loader.load import load_page
+
+
 def main():
-    pass
+    args = parse_args()
+    load_page(args.url, args.output)
 
 
 if __name__ == '__main__':
