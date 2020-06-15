@@ -2,6 +2,7 @@
 
 ### Install:
 
+[![Build Status](https://travis-ci.org/alezi06/python-project-lvl3.svg?branch=master)](https://travis-ci.org/alezi06/python-project-lvl3)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e881d4a51f8c34e19a3f/maintainability)](https://codeclimate.com/github/alezi06/python-project-lvl3/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e881d4a51f8c34e19a3f/test_coverage)](https://codeclimate.com/github/alezi06/python-project-lvl3/test_coverage)
 
@@ -13,17 +14,16 @@ python -m pip install --user -i https://test.pypi.org/simple/ --extra-index-url 
 
 ```
 $ page-loader -h
-usage: page-loader [-h] [-f FORMAT] first_file second_file
+usage: page-loader [-h] [-o OUTPUT] url
 
-Generate diff
+Load Page
 
 positional arguments:
-  first_file
-  second_file
+  url
 
 optional arguments:
   -h, --help                   show this help message and exit
-  -f FORMAT, --format FORMAT   set format of output: json, plain, pretty
+  -f OUTPUT, --output OUTPUT   output directory
 
 ```
 
