@@ -11,7 +11,7 @@ TAG_ATTRS = {'link': 'href', 'script': 'src', 'img': 'src'}
 def create_file_name(url):
     u = urlparse(url)
     path, ext = os.path.splitext(u.path)
-    file_name = re.sub(r'\W', '-', u.netloc + path)
+    file_name = re.sub(r'\W', '-', f'{u.netloc}{path}')
     return '{}{}'.format(file_name.strip('-'), ext)
 
 
@@ -28,7 +28,7 @@ def write_to_file(path, content, flag='w'):
 def change_links(page, dir_name):
     soup = BeautifulSoup(page, 'html.parser')
     links = []
-    for tag in soup.find_all(['link', 'script', 'img']):
+    for tag in soup.find_all(TAG_ATTRS.keys()):
         attr = TAG_ATTRS[tag.name]
         value = tag.get(attr)
         if value and not value.startswith(('http', '//')):
@@ -41,7 +41,11 @@ def save_resources(links, path, url):
     u = urlparse(url)
     for link in links:
         content = get_content(f'{u.scheme}://{u.netloc}{link}')
-        write_to_file(path, content, 'wb')
+        write_to_file(
+            os.path.join(path, create_file_name(link)),
+            content,
+            'wb'
+        )
 
 
 def load_page(url, output):

@@ -29,4 +29,4 @@ optional arguments:
 
 Asciinema:
 
-[![asciicast](https://asciinema.org/a/8MCteI7bpJvBXDoqrSdGtfEeH.svg)](https://asciinema.org/a/8MCteI7bpJvBXDoqrSdGtfEeH)
+[![asciicast](https://asciinema.org/a/DNuSoWH6Jr8eSz4Ov2hORsVXQ.svg)](https://asciinema.org/a/DNuSoWH6Jr8eSz4Ov2hORsVXQ)
