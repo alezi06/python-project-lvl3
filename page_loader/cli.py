@@ -8,7 +8,16 @@ DEFAULT_DIR = os.getcwd()
 def parse_args():
     parser = argparse.ArgumentParser(description='Download page')
     parser.add_argument('url')
-    parser.add_argument('-o', '--output',
-                        default=DEFAULT_DIR,
-                        help='directory of output')
+    parser.add_argument(
+        '-l',
+        '--log',
+        default='info',
+        choices=['debug', 'info', 'warning', 'error', 'critical']
+    )
+    parser.add_argument(
+        '-o',
+        '--output',
+        default=DEFAULT_DIR,
+        help='directory of output'
+    )
     return parser.parse_args()

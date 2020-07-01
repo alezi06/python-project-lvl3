@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "alezi06-page-loader"
-version = "0.2.2"
+version = "0.3.0"
 description = ""
 authors = ["alezi06 <alezi06@mail.ru>"]
 packages = [
