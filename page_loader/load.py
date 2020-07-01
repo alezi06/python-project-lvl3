@@ -5,9 +5,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
 
-TAG_ATTRS = {'link': 'href', 'script': 'src', 'img': 'src'}
-
-
 def create_file_name(url):
     u = urlparse(url)
     path, ext = os.path.splitext(u.path)
@@ -27,9 +24,10 @@ def write_to_file(path, content, flag='w'):
 
 def change_links(page, dir_name):
     soup = BeautifulSoup(page, 'html.parser')
+    tag_attrs = {'link': 'href', 'script': 'src', 'img': 'src'}
     links = []
-    for tag in soup.find_all(TAG_ATTRS.keys()):
-        attr = TAG_ATTRS[tag.name]
+    for tag in soup.find_all(tag_attrs.keys()):
+        attr = tag_attrs[tag.name]
         value = tag.get(attr)
         if value and not value.startswith(('http', '//')):
             links.append(value)
